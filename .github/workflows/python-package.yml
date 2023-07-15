@@ -18,6 +18,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - run: echo ${{ github.workspace }}
+
+      - uses: actions/checkout@v3
+
+      - run: mkdir -p /home/runner/work/git_action/git_action/artifact
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: path/to/artifact/world.txt
      
 
