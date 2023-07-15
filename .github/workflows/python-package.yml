@@ -21,7 +21,7 @@ jobs:
         run: python -c "import sys; print(sys.version)" > python_version${{ matrix.python-version }}.txt
 
       - name: Upload output as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: python-outputs
           path: python_version${{ matrix.python-version }}.txt
